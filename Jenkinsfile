@@ -18,7 +18,7 @@ pipeline{
            steps{
                /* groovylint-disable-next-line GStringExpressionWithinString */
               // sh 'docker build . -t tomcatsamplewebapp:${evn.BUILD_ID}'
-               sh 'docker build -f .'
+               sh 'docker build -f Tomcat-Docker-Sample/Dockerfile'
            }
        }
     }
