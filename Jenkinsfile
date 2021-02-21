@@ -1,8 +1,5 @@
 pipeline{
     agent any
-    environment {
-             MAJOR_VERSION = 1
-    }
     stages{
         stage('Build Application') {
             steps{
@@ -20,7 +17,8 @@ pipeline{
        stage('create tomcat docker image '){
            steps{
                /* groovylint-disable-next-line GStringExpressionWithinString */
-               sh 'docker build . -t tomcatsamplewebapp:${evn.BUILD_ID}'
+              // sh 'docker build . -t tomcatsamplewebapp:${evn.BUILD_ID}'
+               sh 'docker build . -t tomcatsamplewebapp'
            }
        }
     }
