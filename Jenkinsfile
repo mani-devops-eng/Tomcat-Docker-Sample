@@ -17,8 +17,8 @@ pipeline{
        stage('create tomcat docker image '){
            steps{
                /* groovylint-disable-next-line GStringExpressionWithinString */
-              // sh 'docker build . -t tomcatsamplewebapp:${evn.BUILD_ID}'
-               sh 'docker build Dockerfile'
+              sh 'docker build . -t tomcatsamplewebapp:${evn.BUILD_ID}'
+               //sh 'docker build Dockerfile'
            }
        }
     }
