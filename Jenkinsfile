@@ -10,14 +10,14 @@ pipeline{
             post{
                 success{
                     echo 'Now Archiving the Artifacts....'
-                    archiveArtifacts artifacts:'**/*.war'
+                    archiveArtifacts artifacts:'**/*.jar'
                 }
             }
         }
        stage('create tomcat docker image '){
            steps{
                /* groovylint-disable-next-line GStringExpressionWithinString */
-              sh 'docker build /var/lib/jenkins/workspace/Build_Tomcat_Docker_Image -t tomcatsamplewebapp:${evn.BUILD_ID}'
+              sh 'docker build /var/lib/jenkins/workspace/Build_Tomcat_Docker_Image -t tomcatsamplewebapp:${BUILD_ID}'
                //sh 'docker build Dockerfile'
            }
        }
